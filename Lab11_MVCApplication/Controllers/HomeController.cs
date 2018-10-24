@@ -14,7 +14,7 @@ namespace Lab11_MVCApplication.Controllers
         /// </summary>
         /// <returns>View for get request to Index</returns>
         [HttpGet]
-        public IActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }
@@ -32,11 +32,18 @@ namespace Lab11_MVCApplication.Controllers
             return RedirectToAction("Result", new { startYear, endYear });
         }
 
-        public IActionResult Result(int startYear, int endYear)
+
+        /// <summary>
+        /// Creates the list of people in the csv file that fit the criteria
+        /// </summary>
+        /// <param name="startYear"></param>
+        /// <param name="endYear"></param>
+        /// <returns>The results view</returns>
+        public ViewResult Result(int startYear, int endYear)
         {
             //Creates a list of TimePerson file that match criteria
             List<TimePerson> list = TimePerson.GetPersons(startYear, endYear);
-            return View();
+            return View(list);
         }
 
     }
