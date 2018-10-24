@@ -15,6 +15,8 @@ namespace Lab11_MVCApplication
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //add mvc middleware
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,9 +27,15 @@ namespace Lab11_MVCApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            //uses wwwroot
+            app.UseStaticFiles();
+
+            // creates the default route to home
+            app.UseMvc(routes => 
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default", template: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
         }
     }
