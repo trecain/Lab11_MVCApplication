@@ -1,1 +1,40 @@
-﻿Hello Result
+﻿@model List<Lab11_MVCApplication.Models.TimePerson>
+<head>
+    <title>Results Page</title>
+</head>
+<body>
+    <h1>Results:</h1>
+    <div class="results-display">
+        <table>
+            <thead>
+                <tr>    
+                    <th>Year</th>
+                    <th>Honor</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Birth Year</th>
+                    <th>Death Year</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in Model)
+                {
+                <tr>
+                    <td>@person.Year</td>
+                    <td>@person.Honor</td>
+                    <td>@person.Name</td>
+                    <td>@person.Country</td>
+                    <td>@person.Birth_Year</td>
+                    <td>@person.DeathYear</td>
+                    <td>@person.Title</td>
+                    <td>@person.Category</td>
+                    <td>@person.Context</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
