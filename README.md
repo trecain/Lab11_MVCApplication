@@ -36,4 +36,4 @@ public string Context { get; set; }
 
 ## Visual: 
 ![times magazine](https://github.com/trecain/Lab11_MVCApplication/blob/master/assets/imageOne.PNG)
-![times magazine]()
+![times magazine](https://github.com/trecain/Lab11_MVCApplication/blob/master/assets/results.PNG)
