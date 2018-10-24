@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Lab11_MVCApplication.Models;
 
 namespace Lab11_MVCApplication.Controllers
 {
@@ -34,7 +35,7 @@ namespace Lab11_MVCApplication.Controllers
         public IActionResult Result(int startYear, int endYear)
         {
             //Creates a list of TimePerson file that match criteria
-            //List<TimePerson> list -TimePerson.GetPersons(begYear, endYear);
+            List<TimePerson> list = TimePerson.GetPersons(startYear, endYear);
             return View();
         }
 
