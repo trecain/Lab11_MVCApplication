@@ -27,7 +27,7 @@ namespace Lab11_MVCApplication.Models
             //create new path with current directory
             string path = Environment.CurrentDirectory;
             //combine the current directory and locates the persons who fit the criteria given
-            string newPath = Path.GetFullPath(Path.Combine(path, @"wwwroot\TimePerson.csv"));
+            string newPath = Path.GetFullPath(Path.Combine(path, @"wwwroot\personOfTheYear.csv"));
             // read all lines of csv file
             string[] myFile = File.ReadAllLines(newPath);
 
